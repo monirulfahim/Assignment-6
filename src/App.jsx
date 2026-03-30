@@ -67,6 +67,23 @@ function App() {
       </div>
     </section>
 
+    <section className="flex justify-around bg-[#4f39f6] pt-12 pr-48 pb-12 pl-48 text-[#FFFFFF]">
+      <div>
+        <p className='font-bold text-4xl mb-1'>50K+</p>
+        <p className='text-2xl'>Active Users</p>
+      </div>
+      <div className="h-17 w-px bg-white opacity-25"></div>
+      <div>
+        <p className='font-bold text-4xl mb-1'>200+</p>
+        <p className='text-2xl'>Premium Tools</p>
+      </div>
+      <div className="h-17 w-px bg-white opacity-25"></div>
+      <div>
+        <p className='font-bold text-4xl mb-1'>4.9</p>
+        <p className='text-2xl'>Rating</p>
+      </div>
+    </section>
+
     </>
   )
 }
