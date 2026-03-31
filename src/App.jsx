@@ -1,9 +1,9 @@
-import { useState } from 'react'
-import { useEffect } from 'react'
-import cartImg from './assets/shoppingcart01.png'
-import dotImg from './assets/group-5.png'
-import bannerImg from './assets/banner.png'
-// import './App.css'
+import './index.css';
+import { useState } from 'react';
+import { useEffect } from 'react';
+import cartImg from './assets/shoppingcart01.png';
+import bannerImg from './assets/banner.png';
+// import './App.css';
 
 function App() {
 
@@ -44,6 +44,9 @@ function App() {
       </div>
       <hr className='opacity-10 h-[0.00000000000000000000000000000000000000000000000000001px]' />
 
+
+                                   {/* Banner Section */}
+
       <section className='flex justify-between items-center mt-15 mr-48 mb-15 ml-48'>
         <div className='flex flex-col gap-6'>
           <div className='flex items-center gap-2 bg-[#e1e7ff] w-fit rounded-full px-3 py-2 cursor-pointer'>
@@ -76,6 +79,8 @@ function App() {
         </div>
       </section>
 
+                                      {/*  Stats Section */}
+
       <section className="flex justify-around bg-[#4f39f6] pt-12 pr-48 pb-12 pl-48 text-[#FFFFFF]">
         <div>
           <p className='font-bold text-5xl mb-1'>50K+</p>
@@ -96,6 +101,8 @@ function App() {
         </div>
       </section>
 
+
+
       <section className='flex flex-col justify-center items-center mt-30 mr-43 mb-10 ml-43'>
         <div className='text-center mb-4'>
           <h1 className='font-semibold text-5xl text-[#101727] '>Premium Digital Tools</h1>
@@ -108,11 +115,21 @@ function App() {
         </div>
       </section>
 
+                                        {/* Product Cards Section */}
+
       <section className='bg-[#FFFFFF] mt-10 mr-43 mb-32 ml-43'>
         <div className='grid grid-cols-3 gap-3'>
           {products.map(products => (
-            <div key={products.id} className='border border-gray-200 rounded-2xl p-5'>
-              <div className='text-right border border-gray-100 bg w-fit rounded-2xl'>{products.tag}</div>
+            <div key={products.id} className='relative border border-gray-200 rounded-2xl p-5'>
+              <div className={`absolute right-4  border border-gray-400 px-2 py-1 w-fit rounded-[1000px] 
+                  ${products.tag === "Best Seller" ? "bg-yellow-100 text-yellow-800" : ""}
+                  ${products.tag === "Popular" ? "bg-gray-200 text-gray-700" : ""}
+                  ${products.tag === "New" ? "bg-green-100 text-green-600" : ""}
+                `}>
+
+                {products.tag}
+
+              </div>
               <div className='mb-4 border border-gray-50 bg-[#f5f5f5] w-fit rounded-[1000px] p-3.5'>
                 <img src={products.image} alt="" />
               </div>
@@ -137,7 +154,7 @@ function App() {
                 </ul>
               </div>
               <div>
-                <button className='bg-[#4f39f6] text-white rounded-[100px] px-10 py-2 w-full cursor-pointer'>Buy Now</button>
+                <button className='bg-[#4f39f6] text-white rounded-[100px] px-10 py-3 w-full cursor-pointer text-xl'>Buy Now</button>
               </div>
             </div>
           ))}
@@ -145,6 +162,48 @@ function App() {
         ;
       </section>
 
+
+                              {/* Steps Section */}
+
+      <section className='mt-30 mr-50 mb-30 ml-50'>
+        <div className='text-center mb-12'>
+            <h1 className='font-bold text-5xl text-[#101727]'>Get Started in 3 Steps</h1>
+            <br />
+            <p className='text-[#627382]'>Start using premium digital tools in minutes, not hours.</p>
+        </div>
+        <div className='flex justify-around items-center gap-4'>
+            <div className='border border-gray-300 p-6 rounded-xl flex flex-col  items-center bg-[#FFFFFF] shadow-xl relative'> 
+                <div className='absolute right-3 top-px mt-2 bg-[#4f39f6] text-white font-bold px-3 py-2 rounded-[1000000px]'>01</div>
+                <div>
+                  <img className='mb-4 mt-16 bg-gray-200 rounded-[100000px] p-4.5' src="/Assignment-6/src/assets/user.png" alt="" />
+                </div>
+                <div>
+                  <h2 className='font-semibold text-2xl mb-4 text-center text-[#101727]'>Create Account</h2>
+                  <p className='mb-14 text-center text-[#627382]'>Sign up for free in seconds. No credit card<br />required to get started.</p>
+                </div>
+            </div>
+            <div className='border border-gray-300 p-6 rounded-xl flex flex-col justify-center items-center bg-[#FFFFFF] shadow-xl relative'> 
+                <div>
+                  <div className='absolute right-3 top-px mt-2 bg-[#4f39f6] text-white font-bold px-3 py-2 rounded-[1000000px]'>02</div>
+                  <img className='mb-4 mt-16 bg-gray-200 rounded-[100000px] p-4.5' src="/Assignment-6/src/assets/package.png" alt="" />
+                </div>
+                <div>
+                  <h2 className='font-semibold text-2xl mb-4 text-center text-[#101727]'>Choose Products</h2>
+                  <p className='mb-14 text-center text-[#627382]'>Browse our catalog and select the tools <br />that fit your needs.</p>
+                </div>
+            </div>
+            <div className='border border-gray-300 p-6 rounded-xl flex flex-col justify-center items-center bg-[#FFFFFF] shadow-xl relative'> 
+                <div>
+                  <div className='absolute right-3 top-px mt-2 bg-[#4f39f6] text-white font-bold px-3 py-2 rounded-[1000000px]'>03</div>
+                  <img className='mb-4 mt-16 bg-gray-200 rounded-[10000px] p-4.5' src="/Assignment-6/src/assets/rocket.png" alt="" />
+                </div>
+                <div>
+                  <h2 className='font-semibold text-2xl mb-4 text-center text-[#101727]'>Start Creating</h2>
+                  <p className='mb-14 text-center text-[#627382]'>Download and start using your premium <br />tools immediately.</p>
+                </div>
+            </div>
+        </div>
+      </section>
     </>
   )
 }
