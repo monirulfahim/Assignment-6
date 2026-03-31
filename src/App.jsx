@@ -47,7 +47,7 @@ function App() {
       <hr className='opacity-10 h-[0.00000000000000000000000000000000000000000000000000001px]' />
 
 
-                                   {/* Banner Section */}
+      {/* Banner Section */}
 
       <section className='flex justify-between items-center mt-15 mr-48 mb-15 ml-48'>
         <div className='flex flex-col gap-6'>
@@ -81,7 +81,7 @@ function App() {
         </div>
       </section>
 
-                                      {/*  Stats Section */}
+      {/*  Stats Section */}
 
       <section className="flex justify-around bg-[#4f39f6] pt-12 pr-48 pb-12 pl-48 text-[#FFFFFF]">
         <div>
@@ -117,7 +117,7 @@ function App() {
         </div>
       </section>
 
-                                        {/* Product Cards Section */}
+                                      {/* Product Cards Section */}
 
       <section className='bg-[#FFFFFF] mt-10 mr-43 mb-32 ml-43'>
         <div className='grid grid-cols-3 gap-3'>
@@ -165,106 +165,170 @@ function App() {
       </section>
 
 
-                              {/* Steps Section */}
+                                {/* Steps Section */}
 
       <section className='mt-30 mr-50 mb-30 ml-50'>
         <div className='text-center mb-12'>
-            <h1 className='font-bold text-5xl text-[#101727]'>Get Started in 3 Steps</h1>
-            <br />
-            <p className='text-[#627382]'>Start using premium digital tools in minutes, not hours.</p>
+          <h1 className='font-bold text-5xl text-[#101727]'>Get Started in 3 Steps</h1>
+          <br />
+          <p className='text-[#627382]'>Start using premium digital tools in minutes, not hours.</p>
         </div>
         <div className='flex justify-around items-center gap-4'>
-            <div className='border border-gray-300 p-6 rounded-xl flex flex-col  items-center bg-[#FFFFFF] shadow-xl relative'> 
-                <div className='absolute right-3 top-px mt-2 bg-[#4f39f6] text-white font-bold px-3 py-2 rounded-[1000000px]'>01</div>
-                <div>
-                  <img className='mb-4 mt-16 bg-gray-200 rounded-[100000px] p-4.5' src={userImg} alt="" />
-                </div>
-                <div>
-                  <h2 className='font-semibold text-2xl mb-4 text-center text-[#101727]'>Create Account</h2>
-                  <p className='mb-14 text-center text-[#627382]'>Sign up for free in seconds. No credit card<br />required to get started.</p>
-                </div>
+          <div className='border border-gray-300 p-6 rounded-xl flex flex-col  items-center bg-[#FFFFFF] shadow-xl relative'>
+            <div className='absolute right-3 top-px mt-2 bg-[#4f39f6] text-white font-bold px-3 py-2 rounded-[1000000px]'>01</div>
+            <div>
+              <img className='mb-4 mt-16 bg-gray-200 rounded-[100000px] p-4.5' src={userImg} alt="" />
             </div>
-            <div className='border border-gray-300 p-6 rounded-xl flex flex-col justify-center items-center bg-[#FFFFFF] shadow-xl relative'> 
-                <div>
-                  <div className='absolute right-3 top-px mt-2 bg-[#4f39f6] text-white font-bold px-3 py-2 rounded-[1000000px]'>02</div>
-                  <img className='mb-4 mt-16 bg-gray-200 rounded-[100000px] p-4.5' src={packageImg} alt="" />
-                </div>
-                <div>
-                  <h2 className='font-semibold text-2xl mb-4 text-center text-[#101727]'>Choose Products</h2>
-                  <p className='mb-14 text-center text-[#627382]'>Browse our catalog and select the tools <br />that fit your needs.</p>
-                </div>
+            <div>
+              <h2 className='font-semibold text-2xl mb-4 text-center text-[#101727]'>Create Account</h2>
+              <p className='mb-14 text-center text-[#627382]'>Sign up for free in seconds. No credit card<br />required to get started.</p>
             </div>
-            <div className='border border-gray-300 p-6 rounded-xl flex flex-col justify-center items-center bg-[#FFFFFF] shadow-xl relative'> 
-                <div>
-                  <div className='absolute right-3 top-px mt-2 bg-[#4f39f6] text-white font-bold px-3 py-2 rounded-[1000000px]'>03</div>
-                  <img className='mb-4 mt-16 bg-gray-200 rounded-[10000px] p-4.5' src={rocketImg} alt="" />
-                </div>
-                <div>
-                  <h2 className='font-semibold text-2xl mb-4 text-center text-[#101727]'>Start Creating</h2>
-                  <p className='mb-14 text-center text-[#627382]'>Download and start using your premium <br />tools immediately.</p>
-                </div>
+          </div>
+          <div className='border border-gray-300 p-6 rounded-xl flex flex-col justify-center items-center bg-[#FFFFFF] shadow-xl relative'>
+            <div>
+              <div className='absolute right-3 top-px mt-2 bg-[#4f39f6] text-white font-bold px-3 py-2 rounded-[1000000px]'>02</div>
+              <img className='mb-4 mt-16 bg-gray-200 rounded-[100000px] p-4.5' src={packageImg} alt="" />
             </div>
+            <div>
+              <h2 className='font-semibold text-2xl mb-4 text-center text-[#101727]'>Choose Products</h2>
+              <p className='mb-14 text-center text-[#627382]'>Browse our catalog and select the tools <br />that fit your needs.</p>
+            </div>
+          </div>
+          <div className='border border-gray-300 p-6 rounded-xl flex flex-col justify-center items-center bg-[#FFFFFF] shadow-xl relative'>
+            <div>
+              <div className='absolute right-3 top-px mt-2 bg-[#4f39f6] text-white font-bold px-3 py-2 rounded-[1000000px]'>03</div>
+              <img className='mb-4 mt-16 bg-gray-200 rounded-[10000px] p-4.5' src={rocketImg} alt="" />
+            </div>
+            <div>
+              <h2 className='font-semibold text-2xl mb-4 text-center text-[#101727]'>Start Creating</h2>
+              <p className='mb-14 text-center text-[#627382]'>Download and start using your premium <br />tools immediately.</p>
+            </div>
+          </div>
         </div>
       </section>
 
-                                        {/* Pricing Section */}
+      {/* Pricing Section */}
 
       <section className='mt-30 mr-50 mb-30 ml-50'>
         <div className='text-center'>
-            <h1 className='text-5xl font-semibold text-[#101727]'>Simple, Transparent Pricing</h1>
-            <br />
-            <p className='text-[#627382] mb-10'>Choose the plan that fits your needs. Upgrade or downgrade anytime.</p>
+          <h1 className='text-5xl font-semibold text-[#101727]'>Simple, Transparent Pricing</h1>
+          <br />
+          <p className='text-[#627382] mb-10'>Choose the plan that fits your needs. Upgrade or downgrade anytime.</p>
         </div>
         <div className='flex justify-center items-center gap-6'>
-            <div className='bg-[#F9FAFC] border border-gray-100 p-6 rounded-2xl '>
-                <div className='pr-20'>
-                  <h1 className='text-3xl font-semibold text-[#101727] mb-1.5'>Starter</h1>
-                  <p className='mb-6 text-[#627382]'>Perfect for getting started</p>
+          <div className='bg-[#F9FAFC] border border-gray-100 p-6 rounded-2xl '>
+            <div className='pr-20'>
+              <h1 className='text-3xl font-semibold text-[#101727] mb-1.5'>Starter</h1>
+              <p className='mb-6 text-[#627382]'>Perfect for getting started</p>
 
-                  <span className='font-semibold text-3xl'>$0</span>/<span className='text-[#627382]'>Month</span>
-                  <ol className='mt-6'>
-                    <li className='flex gap-2'><img src="/Assignment-6/images/Check.png" alt="" />Basic templates</li>
-                    <li className='flex gap-2'><img src="/Assignment-6/images/Check.png" alt="" />Access to 10 free tools</li>
-                    <li className='flex gap-2'><img src="/Assignment-6/images/Check.png" alt="" />Community support</li>
-                    <li className='flex gap-2 mb-14'><img src="/Assignment-6/images/Check.png" alt="" />1 project per month</li>
-                  </ol>
-                </div>
-                  <button className='bg-[#9514FA] text-white rounded-[100px] px-10 py-3 w-full cursor-pointer text-xl'>Get Started Free</button>
+              <span className='font-semibold text-3xl'>$0</span>/<span className='text-[#627382]'>Month</span>
+              <ol className='mt-6'>
+                <li className='flex gap-2'><img src="/Assignment-6/images/Check.png" alt="" />Basic templates</li>
+                <li className='flex gap-2'><img src="/Assignment-6/images/Check.png" alt="" />Access to 10 free tools</li>
+                <li className='flex gap-2'><img src="/Assignment-6/images/Check.png" alt="" />Community support</li>
+                <li className='flex gap-2 mb-14'><img src="/Assignment-6/images/Check.png" alt="" />1 project per month</li>
+              </ol>
             </div>
-            <div className='bg-[#4f39f6] text-[#FFFFFF] p-6 rounded-2xl shadow-[0_20px_60px_rgba(70,50,240,0.4)] relative'>
-              <div><button className='bg-[#FEF3C6] text-[#BB4D00] rounded-[100px] px-2 py-1 absolute -top-3 left-1/2 -translate-x-1/2'>Most Popular</button></div>
-                <div className='pr-20'>
-                  <h1 className='text-3xl font-semibold mb-1.5'>Pro</h1>
-                  <p className='mb-6'>Best for professionals</p>
+            <button className='bg-[#9514FA] text-white rounded-[100px] px-10 py-3 w-full cursor-pointer text-xl'>Get Started Free</button>
+          </div>
+          <div className='bg-[#4f39f6] text-[#FFFFFF] p-6 rounded-2xl shadow-[0_20px_60px_rgba(70,50,240,0.4)] relative'>
+            <div><button className='bg-[#FEF3C6] text-[#BB4D00] rounded-[100px] px-2 py-1 absolute -top-3 left-1/2 -translate-x-1/2'>Most Popular</button></div>
+            <div className='pr-20'>
+              <h1 className='text-3xl font-semibold mb-1.5'>Pro</h1>
+              <p className='mb-6'>Best for professionals</p>
 
-                <span className='font-semibold text-3xl'>$29</span>/<span>Month</span>
-                <ol className='mt-6'>
-                  <li className='flex gap-2'><img src="/Assignment-6/images/Check.png" alt="" />Access to all premium tools</li>
-                  <li className='flex gap-2'><img src="/Assignment-6/images/Check.png" alt="" />Unlimited templates</li>
-                  <li className='flex gap-2'><img src="/Assignment-6/images/Check.png" alt="" />Priority support</li>
-                  <li className='flex gap-2'><img src="/Assignment-6/images/Check.png" alt="" />Unlimited projects</li>
-                  <li className='flex gap-2'><img src="/Assignment-6/images/Check.png" alt="" />Cloud sync</li>
-                  <li className='flex gap-2 mb-14'><img src="/Assignment-6/images/Check.png" alt="" />Advanced analytics</li>
-                </ol>
-                </div>
-                <button className='bg-white text-[#4f39f6] rounded-[100px] px-10 py-3 w-full cursor-pointer text-xl'>Start Pro Trial</button>
+              <span className='font-semibold text-3xl'>$29</span>/<span>Month</span>
+              <ol className='mt-6'>
+                <li className='flex gap-2'><img src="/Assignment-6/images/Check.png" alt="" />Access to all premium tools</li>
+                <li className='flex gap-2'><img src="/Assignment-6/images/Check.png" alt="" />Unlimited templates</li>
+                <li className='flex gap-2'><img src="/Assignment-6/images/Check.png" alt="" />Priority support</li>
+                <li className='flex gap-2'><img src="/Assignment-6/images/Check.png" alt="" />Unlimited projects</li>
+                <li className='flex gap-2'><img src="/Assignment-6/images/Check.png" alt="" />Cloud sync</li>
+                <li className='flex gap-2 mb-14'><img src="/Assignment-6/images/Check.png" alt="" />Advanced analytics</li>
+              </ol>
             </div>
-            <div className='bg-[#F9FAFC] border border-gray-100 p-6 rounded-2xl'>
-                <div className='pr-20'>
-                    <h1 className='text-3xl font-semibold text-[#101727] mb-1'>Enterprise</h1>
-                    <p className='mb-5 text-[#627382]'>For teams and businesses</p>
+            <button className='bg-white text-[#4f39f6] rounded-[100px] px-10 py-3 w-full cursor-pointer text-xl'>Start Pro Trial</button>
+          </div>
+          <div className='bg-[#F9FAFC] border border-gray-100 p-6 rounded-2xl'>
+            <div className='pr-20'>
+              <h1 className='text-3xl font-semibold text-[#101727] mb-1'>Enterprise</h1>
+              <p className='mb-5 text-[#627382]'>For teams and businesses</p>
 
-                  <span className='font-semibold text-3xl'>$99</span>/<span className='text-[#627382]'>Month</span>
-                  <ol className='mt-6'>
-                    <li className='flex gap-2'><img src="/Assignment-6/images/Check.png" alt="" />Everything in Pro</li>
-                    <li className='flex gap-2'><img src="/Assignment-6/images/Check.png" alt="" />Team collaboration</li>
-                    <li className='flex gap-2'><img src="/Assignment-6/images/Check.png" alt="" />Custom integrations</li>
-                    <li className='flex gap-2'><img src="/Assignment-6/images/Check.png" alt="" />Dedicated support</li>
-                    <li className='flex gap-2'><img src="/Assignment-6/images/Check.png" alt="" />SLA guarantee</li>
-                    <li className='flex gap-2 mb-8'><img src="/Assignment-6/images/Check.png" alt="" />Custom branding</li>
-                  </ol>
-                </div>
-                  <button className='bg-[#9514FA] text-white rounded-[100px] px-10 py-3 w-full cursor-pointer text-xl'>Contact Sales</button>
+              <span className='font-semibold text-3xl'>$99</span>/<span className='text-[#627382]'>Month</span>
+              <ol className='mt-6'>
+                <li className='flex gap-2'><img src="/Assignment-6/images/Check.png" alt="" />Everything in Pro</li>
+                <li className='flex gap-2'><img src="/Assignment-6/images/Check.png" alt="" />Team collaboration</li>
+                <li className='flex gap-2'><img src="/Assignment-6/images/Check.png" alt="" />Custom integrations</li>
+                <li className='flex gap-2'><img src="/Assignment-6/images/Check.png" alt="" />Dedicated support</li>
+                <li className='flex gap-2'><img src="/Assignment-6/images/Check.png" alt="" />SLA guarantee</li>
+                <li className='flex gap-2 mb-8'><img src="/Assignment-6/images/Check.png" alt="" />Custom branding</li>
+              </ol>
+            </div>
+            <button className='bg-[#9514FA] text-white rounded-[100px] px-10 py-3 w-full cursor-pointer text-xl'>Contact Sales</button>
+          </div>
+        </div>
+      </section>
+
+
+                                  {/* Footer Section */}
+
+      <section className='bg-[#101727] text-[#FFFFFF] pt-30 pr-50 pb-8 pl-50'>
+        <div className='flex justify-around'>
+          <div>
+            <h1 className='font-bold text-4xl '>DigiTools</h1>
+            <br />
+            <p className='text-[#627382]'>Premium digital tools for creators,<br />professionals, and businesses. Work smarter<br />with our suite of powerful tools.</p>
+          </div>
+          <div>
+            <ul>
+              <li className='text-2xl mb-2.5'>Product</li>
+              <li className='text-[#627382] mb-3'>Features</li>
+              <li className='text-[#627382] mb-3'>Pricing</li>
+              <li className='text-[#627382] mb-3'>Templates</li>
+              <li className='text-[#627382]'>Integrations</li>
+            </ul>
+          </div>
+          <div>
+            <ul>
+              <li className='text-2xl mb-2.5'>Company</li>
+              <li className='text-gray-400 mb-3'>About</li>
+              <li className='text-gray-400 mb-3'>Blog</li>
+              <li className='text-gray-400 mb-3'>Careers</li>
+              <li className='text-gray-400'>Press</li>
+            </ul>
+          </div>
+          <div>
+            <ul>
+              <li className='text-2xl mb-2.5'>Resources</li>
+              <li className='text-gray-400 mb-3'>Documentation</li>
+              <li className='text-gray-400 mb-3'>Help Center</li>
+              <li className='text-gray-400 mb-3'>Community</li>
+              <li className='text-gray-400'>Contact</li>
+            </ul>
+          </div>
+          <div>
+            <div>
+              <p className='text-2xl'>Social Links</p>
+            </div>
+            <br />
+            <div className='flex gap-3'>
+              <span className='border border-gray-200 rounded-[1000px] p-2'><img src="/Assignment-6/images/instagram.png" alt="" /></span>
+              <span className='border border-gray-200 rounded-[1000px] p-2'><img src="/Assignment-6/images/fb-icon.jpg" alt="" /></span>
+              <span className='border border-gray-200 rounded-[1000px] p-2'><img src="/Assignment-6/images/twitter-icon.jpg" alt="" /></span>
+            </div>
+          </div>
+        </div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <hr className='pt-5 opacity-10' />
+        <div className='flex justify-between items-center mt-6'>
+            <div>© 2026 Digitools. All rights reserved.</div>
+            <div className='flex gap-7'>
+               <div>Privacy Policy</div>
+               <div>Terms of Service</div>
+               <div>Cookies</div>
             </div>
         </div>
       </section>
