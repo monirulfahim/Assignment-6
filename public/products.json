@@ -1,0 +1,89 @@
+[
+  {
+    "image": "/Assignment-6/images/writing_2327400.png",
+    "id": 1,
+    "name": "AI Writing Pro",
+    "description": "Generate high-quality content,blogs,and marketing copy in seconds with advanced.",
+    "price": "$29",
+    "type": "monthly",
+    "tag": "Best Seller",
+    "features": [
+        { "text1": "Unlimited AI generations" },
+        { "text2": "50+ writing templates" },
+        { "text3": "Grammar checker" }
+    ]
+  },
+  {
+    "image": "/Assignment-6/images/design-tool.png",
+    "id": 2,
+    "name": "Design Templates Pack",
+    "description": "2000+ premium templates for social media, presentations, and marketing materials.",
+    "price": "$49",
+    "type": "one-time",
+    "tag": "Popular",
+    "features": [
+        { "text1": "2000+ templates" },
+        { "text2": "Monthly updates" },
+        { "text3": "Commercial license" }
+    ]
+  },
+  {
+    "image": "/Assignment-6/images/images.png",
+    "id": 3,
+    "name": "Premium Stock Assets",
+    "description": "Access millions of royalty-free photos, videos, and graphics for your projects.",
+    "price": "$19",
+    "type": "monthly",
+    "tag": "New",
+    
+    "features": [
+        { "text1": "10M+ assets" },
+        { "text2": "Commercial use" },
+        { "text3": "No attribution" }
+    ]
+  },
+  {
+    "image": "/Assignment-6/images/operation.png",
+    "id": 4,
+    "name": "Automation Toolkit",
+    "description": "Automate repetitive tasks and streamline your workflow with powerful tools.",
+    "price": "$79",
+    "type": "monthly",
+    "tag": "Popular",
+    "features": [
+        { "text1": "50+ automations" },
+        { "text2": "API access" },
+        { "text3": "Custom workflows" }
+      
+    ]
+  },
+  {
+    "image": "/Assignment-6/images/portfolio.png",
+    "id": 5,
+    "name": "Resume Builder Pro",
+    "description": "Create professional resumes and cover letters that land interviews.",
+    "price": "$15",
+    "type": "one-time",
+    "tag": "New",
+    "features": [
+        { "text1": "100+ templates" },
+        { "text2": "ATS optimization" },
+        { "text3": "Export to PDF" }
+      
+    ]
+  },
+  {
+    "image": "/Assignment-6/images/social-media.png",
+    "id": 6,
+    "name": "Social Media Content Kit",
+    "description": "Complete toolkit for creating engaging social media content across all platforms.",
+    "price": "$39",
+    "type": "monthly",
+    "tag": "Best Seller",
+    "features": [
+        { "text1": "5000+ assets" },
+        { "text2": "Scheduler included" },
+        { "text3": "Analytics dashboard" }
+    ]
+  }
+]
