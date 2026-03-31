@@ -1,9 +1,11 @@
-import './index.css';
-import { useState } from 'react';
-import { useEffect } from 'react';
-import cartImg from './assets/shoppingcart01.png';
-import bannerImg from './assets/banner.png';
-// import './App.css';
+import { useState } from 'react'
+import { useEffect } from 'react'
+import cartImg from './assets/shoppingcart01.png'
+import bannerImg from './assets/banner.png'
+import userImg from './assets/user.png'
+import packageImg from './assets/package.png'
+import rocketImg from './assets/rocket.png'
+// import './App.css'
 
 function App() {
 
@@ -175,7 +177,7 @@ function App() {
             <div className='border border-gray-300 p-6 rounded-xl flex flex-col  items-center bg-[#FFFFFF] shadow-xl relative'> 
                 <div className='absolute right-3 top-px mt-2 bg-[#4f39f6] text-white font-bold px-3 py-2 rounded-[1000000px]'>01</div>
                 <div>
-                  <img className='mb-4 mt-16 bg-gray-200 rounded-[100000px] p-4.5' src="/Assignment-6/src/assets/user.png" alt="" />
+                  <img className='mb-4 mt-16 bg-gray-200 rounded-[100000px] p-4.5' src={userImg} alt="" />
                 </div>
                 <div>
                   <h2 className='font-semibold text-2xl mb-4 text-center text-[#101727]'>Create Account</h2>
@@ -185,7 +187,7 @@ function App() {
             <div className='border border-gray-300 p-6 rounded-xl flex flex-col justify-center items-center bg-[#FFFFFF] shadow-xl relative'> 
                 <div>
                   <div className='absolute right-3 top-px mt-2 bg-[#4f39f6] text-white font-bold px-3 py-2 rounded-[1000000px]'>02</div>
-                  <img className='mb-4 mt-16 bg-gray-200 rounded-[100000px] p-4.5' src="/Assignment-6/src/assets/package.png" alt="" />
+                  <img className='mb-4 mt-16 bg-gray-200 rounded-[100000px] p-4.5' src={packageImg} alt="" />
                 </div>
                 <div>
                   <h2 className='font-semibold text-2xl mb-4 text-center text-[#101727]'>Choose Products</h2>
@@ -195,12 +197,74 @@ function App() {
             <div className='border border-gray-300 p-6 rounded-xl flex flex-col justify-center items-center bg-[#FFFFFF] shadow-xl relative'> 
                 <div>
                   <div className='absolute right-3 top-px mt-2 bg-[#4f39f6] text-white font-bold px-3 py-2 rounded-[1000000px]'>03</div>
-                  <img className='mb-4 mt-16 bg-gray-200 rounded-[10000px] p-4.5' src="/Assignment-6/src/assets/rocket.png" alt="" />
+                  <img className='mb-4 mt-16 bg-gray-200 rounded-[10000px] p-4.5' src={rocketImg} alt="" />
                 </div>
                 <div>
                   <h2 className='font-semibold text-2xl mb-4 text-center text-[#101727]'>Start Creating</h2>
                   <p className='mb-14 text-center text-[#627382]'>Download and start using your premium <br />tools immediately.</p>
                 </div>
+            </div>
+        </div>
+      </section>
+
+                                        {/* Pricing Section */}
+
+      <section className='mt-30 mr-50 mb-30 ml-50'>
+        <div className='text-center'>
+            <h1 className='text-5xl font-semibold text-[#101727]'>Simple, Transparent Pricing</h1>
+            <br />
+            <p className='text-[#627382] mb-10'>Choose the plan that fits your needs. Upgrade or downgrade anytime.</p>
+        </div>
+        <div className='flex justify-center items-center gap-6'>
+            <div className='bg-[#F9FAFC] border border-gray-100 p-6 rounded-2xl '>
+                <div className='pr-20'>
+                  <h1 className='text-3xl font-semibold text-[#101727] mb-1.5'>Starter</h1>
+                  <p className='mb-6 text-[#627382]'>Perfect for getting started</p>
+
+                  <span className='font-semibold text-3xl'>$0</span>/<span className='text-[#627382]'>Month</span>
+                  <ol className='mt-6'>
+                    <li className='flex gap-2'><img src="/Assignment-6/images/Check.png" alt="" />Basic templates</li>
+                    <li className='flex gap-2'><img src="/Assignment-6/images/Check.png" alt="" />Access to 10 free tools</li>
+                    <li className='flex gap-2'><img src="/Assignment-6/images/Check.png" alt="" />Community support</li>
+                    <li className='flex gap-2 mb-14'><img src="/Assignment-6/images/Check.png" alt="" />1 project per month</li>
+                  </ol>
+                </div>
+                  <button className='bg-[#9514FA] text-white rounded-[100px] px-10 py-3 w-full cursor-pointer text-xl'>Get Started Free</button>
+            </div>
+            <div className='bg-[#4f39f6] text-[#FFFFFF] p-6 rounded-2xl shadow-[0_20px_60px_rgba(70,50,240,0.4)] relative'>
+              <div><button className='bg-[#FEF3C6] text-[#BB4D00] rounded-[100px] px-2 py-1 absolute -top-3 left-1/2 -translate-x-1/2'>Most Popular</button></div>
+                <div className='pr-20'>
+                  <h1 className='text-3xl font-semibold mb-1.5'>Pro</h1>
+                  <p className='mb-6'>Best for professionals</p>
+
+                <span className='font-semibold text-3xl'>$29</span>/<span>Month</span>
+                <ol className='mt-6'>
+                  <li className='flex gap-2'><img src="/Assignment-6/images/Check.png" alt="" />Access to all premium tools</li>
+                  <li className='flex gap-2'><img src="/Assignment-6/images/Check.png" alt="" />Unlimited templates</li>
+                  <li className='flex gap-2'><img src="/Assignment-6/images/Check.png" alt="" />Priority support</li>
+                  <li className='flex gap-2'><img src="/Assignment-6/images/Check.png" alt="" />Unlimited projects</li>
+                  <li className='flex gap-2'><img src="/Assignment-6/images/Check.png" alt="" />Cloud sync</li>
+                  <li className='flex gap-2 mb-14'><img src="/Assignment-6/images/Check.png" alt="" />Advanced analytics</li>
+                </ol>
+                </div>
+                <button className='bg-white text-[#4f39f6] rounded-[100px] px-10 py-3 w-full cursor-pointer text-xl'>Start Pro Trial</button>
+            </div>
+            <div className='bg-[#F9FAFC] border border-gray-100 p-6 rounded-2xl'>
+                <div className='pr-20'>
+                    <h1 className='text-3xl font-semibold text-[#101727] mb-1'>Enterprise</h1>
+                    <p className='mb-5 text-[#627382]'>For teams and businesses</p>
+
+                  <span className='font-semibold text-3xl'>$99</span>/<span className='text-[#627382]'>Month</span>
+                  <ol className='mt-6'>
+                    <li className='flex gap-2'><img src="/Assignment-6/images/Check.png" alt="" />Everything in Pro</li>
+                    <li className='flex gap-2'><img src="/Assignment-6/images/Check.png" alt="" />Team collaboration</li>
+                    <li className='flex gap-2'><img src="/Assignment-6/images/Check.png" alt="" />Custom integrations</li>
+                    <li className='flex gap-2'><img src="/Assignment-6/images/Check.png" alt="" />Dedicated support</li>
+                    <li className='flex gap-2'><img src="/Assignment-6/images/Check.png" alt="" />SLA guarantee</li>
+                    <li className='flex gap-2 mb-8'><img src="/Assignment-6/images/Check.png" alt="" />Custom branding</li>
+                  </ol>
+                </div>
+                  <button className='bg-[#9514FA] text-white rounded-[100px] px-10 py-3 w-full cursor-pointer text-xl'>Contact Sales</button>
             </div>
         </div>
       </section>

@@ -1,7 +1,4 @@
 @import "tailwindcss";
-*{
-  background-color: (#867f7f);
-}
 
 @keyframes float {
   0% { transform: translateY(0px); }
