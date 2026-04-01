@@ -56,20 +56,26 @@ const handleCheckout = () => {
     <>
       {/* Navbar Section */}
 
-      <div className='flex justify-between items-center mt-4 mr-46 mb-4 ml-46 p-6 max-[576px]:flex-col gap-10 max-[576px]:mr-10 max-[576px]:ml-10'>
+      <div className='flex justify-between items-center mt-4 mr-46 mb-4 ml-46 p-6 max-[576px]:flex-col gap-10 max-[576px]:mr-8 max-[576px]:ml-8'>
         <div>
           <h1 className='font-bold text-[#4f39f6] text-4xl'>DigiTools</h1>
         </div>
-        <div className='text-[#101727] cursor-pointer flex justify-between items-center gap-4'>
+        <div className='text-[#101727] cursor-pointer flex justify-between items-center gap-4 max-[576px]:gap-3.5 max-[576px]:text-sm'>
           <div>Products</div>
           <div> Features</div>
           <div>Pricing</div>
           <div>Testimonials</div>
           <div>FAQ</div>
         </div>
-        <div className='flex justify-between items-center gap-4 max-[576px]:gap-6'>
-          <div>
-            <img className='cursor-pointer max-[576px]:w-full' src={cartImg} alt="" />
+        <div className='flex justify-between items-center gap-4'>
+          <div className="relative">
+            <img className='cursor-pointer w-8 h-8 max-[576px]:w-6 max-[576px]:h-6' src={cartImg} alt="" />
+
+             {cart.length > 0 && (
+              <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-1.5 py-0.5 rounded-full">
+              {cart.length}
+    </span>
+  )}
           </div>
           <div>
             <p className='text-[#101727] cursor-pointer hover:animate-[float_0.6s_ease-in-out_infinite] transition'>Login</p>
@@ -86,7 +92,7 @@ const handleCheckout = () => {
 
       <section className='flex justify-between items-center mt-15 mr-48 mb-15 ml-48 max-[576px]:flex-col max-[576px]:mr-10 max-[576px]:ml-10 max-[576px]:gap-8'>
         <div className='flex flex-col gap-6'>
-          <div className='flex items-center gap-2 bg-[#e1e7ff] w-fit rounded-full px-3 py-2 cursor-pointer'>
+          <div className='flex items-center gap-2 bg-[#e1e7ff] w-fit rounded-full px-3 py-2 cursor-pointer max-[576px]:whitespace-nowrap'>
             <span className="w-4 h-4 bg-purple-500 rounded-full "></span>
             <p className='text-[#4f39f6]'>
               New: AI-Powered Tools Available
@@ -118,19 +124,19 @@ const handleCheckout = () => {
 
       {/*  Stats Section */}
 
-      <section className="flex justify-around bg-[#4f39f6] pt-12 pr-48 pb-12 pl-48 text-[#FFFFFF] max-[576px]:flex-col max-[576px]:pt-6 max-[576px]:pr-6 max-[576px]:pb-6 max-[576px]:pl-25">
+      <section className="flex justify-around bg-[#4f39f6] pt-12 pr-48 pb-12 pl-48 text-[#FFFFFF] max-[576px]:flex-col max-[576px]:pt-6 max-[576px]:pr-6 max-[576px]:pb-6 max-[576px]:pl-6 text-center">
         <div>
           <p className='font-bold text-5xl mb-1'>50K+</p>
           <br />
           <p className='text-2xl text-[#FFFFFF] max-[576px]:mb-10'>Active Users</p>
         </div>
-        <hr className='opacity-10 h-[0.00000000000000000000000000000000000000000000000000001px] hidden max-[576px]:block max-[576px]:mr-30'/>
+        <hr className='opacity-10 h-[0.00000000000000000000000000000000000000000000000000001px] hidden max-[576px]:block max-[576px]:mr-18 max-[576px]:ml-18'/>
         <div className="h-17 w-px bg-white opacity-25 max-[576px]:hidden"></div>
         <div>
           <p className='font-bold text-5xl mb-1 max-[576px]:mt-7'>200+</p>
           <br />
           <p className='text-2xl text-[#FFFFFF] max-[576px]:mb-10'>Premium Tools</p>
-          <hr className='opacity-10 h-[0.00000000000000000000000000000000000000000000000000001px] hidden max-[576px]:block max-[576px]:mr-30'/>
+          <hr className='opacity-10 h-[0.00000000000000000000000000000000000000000000000000001px] hidden max-[576px]:block max-[576px]:mr-18 max-[576px]:ml-18'/>
         </div>
         <div className="h-17 w-px bg-white opacity-25 max-[576px]:hidden"></div>
         <div>
@@ -167,7 +173,14 @@ const handleCheckout = () => {
 
       {view === "products" && (
 
-        <section className='bg-[#FFFFFF] mt-10 mr-43 mb-32 ml-43 max-[576px]:mt-5 max-[576px]:mr-2 max-[576px]:mb-20 max-[576px]:ml-5'>
+        <section className={`bg-[#FFFFFF] mt-10 mb-32 ${products.length === 0 ? "mx-5" : "mx-43"}  max-[576px]:mt-5 max-[576px]:mr-2 max-[576px]:mb-20 max-[576px]:ml-5`}>
+
+          {products.length === 0 ? (
+            <div className='bg-[#F2F2F2] mr-0 ml-0'>
+              <div className='pt-60 pb-4 text-7xl text-center'> <i class="fa-solid fa-cart-arrow-down"></i></div>
+              <p className='pb-60 text-2xl text-center'> No Products Available</p>
+            </div>
+          ) : (
           <div className='grid grid-cols-3 gap-3 max-[576px]:grid-cols-1'>
             {products.map(products => (
               <div key={products.id} className='relative border border-gray-200 rounded-2xl p-5'>
@@ -209,12 +222,13 @@ const handleCheckout = () => {
               </div>
             ))}
           </div>
+          )}
         </section>
       )}
 
       {view === "cart" && (
 
-        <section className='mt-10 text-center bg-[#FFFFFF] pr-28 pl-28 shadow-2xl'>
+        <section className='mt-10 text-center bg-[#FFFFFF] pr-28 pl-28 shadow-2xl max-[576px]:pr-0 max-[576px]:pl-0'>
 
           {cart.length === 0 ? (
             <div>
@@ -222,15 +236,15 @@ const handleCheckout = () => {
               <p className='pb-40 text-2xl'> Your cart is empty</p>
             </div>
           ) : (
-            <div className="bg-[#FFFFFF] p-6 rounded-xl">
+            <div className="bg-[#FFFFFF] p-6 rounded-xl max-[576px]:p-4">
               <h2 className="text-3xl font-semibold mb-8 text-start">Your Cart</h2>
 
               {cart.map((item, index) => (
-                <div key={index} className="flex justify-between items-center mb-4 p-4 bg-[#F9FAFC] rounded-2xl">
-                  <div className="flex items-center gap-3">
+                <div key={index} className="flex justify-between items-center mb-4 p-4 bg-[#F9FAFC] rounded-2xl max-[576px]:flex-col max-[576px]:items-start max-[576px]:gap-10 max-[576px]:p-2 max-[576px]:">
+                  <div className="flex items-center gap-3 ">
                     <img src={item.image} className=" border border-gray-200 w-fit rounded-[500px] p-4" />
                     <div>
-                      <p className="font-semibold text-xl text-[#101727]">{item.name}</p>
+                      <p className="font-semibold text-xl text-[#101727] max-[576px]:whitespace-nowrap">{item.name}</p>
                       <p className='text-start mt-1'>${item.price}</p>
                     </div>
                   </div>
