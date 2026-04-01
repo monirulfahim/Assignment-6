@@ -5,15 +5,14 @@ import bannerImg from './assets/banner.png'
 import userImg from './assets/user.png'
 import packageImg from './assets/package.png'
 import rocketImg from './assets/rocket.png'
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 // import './App.css'
 
 function App() {
 
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([]);
-  const handleCheckout = () => {
-  setCart([]);
-};
 
   const [view, setView] = useState("products");
   
@@ -29,6 +28,7 @@ function App() {
 
   const updatedProducts = products.filter(p => p.id !== product.id);
       setProducts(updatedProducts);
+       toast.success(`${product.name} added to cart 🛒`);
   };
 
   const handleRemove = (index) => {
@@ -39,6 +39,17 @@ function App() {
   setProducts(prevProducts =>
     [...prevProducts, removedItem].sort((a, b) => a.id - b.id)
   );
+   toast.info(`${removedItem.name} removed 🚫`);
+};
+
+const handleCheckout = () => {
+  if (cart.length === 0) {
+    toast.error("Cart is already empty!");
+    return;
+  }
+
+  setCart([]);
+  toast.success("Checkout successful 🎉");
 };
 
   return (
@@ -414,6 +425,8 @@ function App() {
           </div>
         </div>
       </section>
+
+      <ToastContainer />
     </>
   )
 }
