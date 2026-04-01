@@ -56,7 +56,7 @@ const handleCheckout = () => {
     <>
       {/* Navbar Section */}
 
-      <div className='flex justify-between items-center mt-4 mr-46 mb-4 ml-46 p-6  sm:flex-row px-4 sm:px-12 py-4 gap-4'>
+      <div className='flex justify-between items-center mt-4 mr-46 mb-4 ml-46 p-6 max-[576px]:flex-col gap-10 max-[576px]:mr-10 max-[576px]:ml-10'>
         <div>
           <h1 className='font-bold text-[#4f39f6] text-4xl'>DigiTools</h1>
         </div>
@@ -67,24 +67,24 @@ const handleCheckout = () => {
           <div>Testimonials</div>
           <div>FAQ</div>
         </div>
-        <div className='flex justify-between items-center gap-4'>
+        <div className='flex justify-between items-center gap-4 max-[576px]:gap-6'>
           <div>
-            <img className='cursor-pointer' src={cartImg} alt="" />
+            <img className='cursor-pointer max-[576px]:w-full' src={cartImg} alt="" />
           </div>
           <div>
             <p className='text-[#101727] cursor-pointer hover:animate-[float_0.6s_ease-in-out_infinite] transition'>Login</p>
           </div>
           <div>
-            <button className='text-[#FFFFFF] bg-[#4f39f6] rounded-[1000px] px-4 py-2 cursor-pointer hover:bg-blue-900 hover:animate-[float_0.6s_ease-in-out_infinite] transition'>Get Started</button>
+            <button className='text-[#FFFFFF] bg-[#4f39f6] rounded-[1000px] px-4 py-2 cursor-pointer hover:bg-blue-900 hover:animate-[float_0.6s_ease-in-out_infinite] transition max-[576px]:px-5 max-[576px]:py-2 max-[576px]:whitespace-nowrap'>Get Started</button>
           </div>
         </div>
       </div>
-      <hr className='opacity-10 h-[0.00000000000000000000000000000000000000000000000000001px]' />
+      <hr className='opacity-10 h-[0.00000000000000000000000000000000000000000000000000001px] max-[576px]:m-5' />
 
 
       {/* Banner Section */}
 
-      <section className='flex justify-between items-center mt-15 mr-48 mb-15 ml-48'>
+      <section className='flex justify-between items-center mt-15 mr-48 mb-15 ml-48 max-[576px]:flex-col max-[576px]:mr-10 max-[576px]:ml-10 max-[576px]:gap-8'>
         <div className='flex flex-col gap-6'>
           <div className='flex items-center gap-2 bg-[#e1e7ff] w-fit rounded-full px-3 py-2 cursor-pointer'>
             <span className="w-4 h-4 bg-purple-500 rounded-full "></span>
@@ -93,7 +93,7 @@ const handleCheckout = () => {
             </p>
           </div>
           <div>
-            <h1 className='text-6xl font-semibold'>Supercharge Your <br />Digital Workflow</h1>
+            <h1 className='text-6xl font-semibold max-[576px]:text-4xl'>Supercharge Your <br />Digital Workflow</h1>
           </div>
           <div>
             <p className='text-[#101727] text-xl'>
@@ -102,7 +102,7 @@ const handleCheckout = () => {
             </p>
           </div>
           <div>
-            <button className='mr-3.5 text-[#ffffff] bg-[#4f39f6] rounded-[100px] px-5 py-2.5 cursor-pointer'>Explore Products
+            <button className='mr-3.5 text-[#ffffff] bg-[#4f39f6] rounded-[100px] px-5 py-2.5 cursor-pointer max-[576px]:mb-4'>Explore Products
 
             </button>
 
@@ -118,21 +118,23 @@ const handleCheckout = () => {
 
       {/*  Stats Section */}
 
-      <section className="flex justify-around bg-[#4f39f6] pt-12 pr-48 pb-12 pl-48 text-[#FFFFFF]">
+      <section className="flex justify-around bg-[#4f39f6] pt-12 pr-48 pb-12 pl-48 text-[#FFFFFF] max-[576px]:flex-col max-[576px]:pt-6 max-[576px]:pr-6 max-[576px]:pb-6 max-[576px]:pl-25">
         <div>
           <p className='font-bold text-5xl mb-1'>50K+</p>
           <br />
-          <p className='text-2xl text-[#FFFFFF]'>Active Users</p>
+          <p className='text-2xl text-[#FFFFFF] max-[576px]:mb-10'>Active Users</p>
         </div>
-        <div className="h-17 w-px bg-white opacity-25"></div>
+        <hr className='opacity-10 h-[0.00000000000000000000000000000000000000000000000000001px] hidden max-[576px]:block max-[576px]:mr-30'/>
+        <div className="h-17 w-px bg-white opacity-25 max-[576px]:hidden"></div>
         <div>
-          <p className='font-bold text-5xl mb-1'>200+</p>
+          <p className='font-bold text-5xl mb-1 max-[576px]:mt-7'>200+</p>
           <br />
-          <p className='text-2xl text-[#FFFFFF]'>Premium Tools</p>
+          <p className='text-2xl text-[#FFFFFF] max-[576px]:mb-10'>Premium Tools</p>
+          <hr className='opacity-10 h-[0.00000000000000000000000000000000000000000000000000001px] hidden max-[576px]:block max-[576px]:mr-30'/>
         </div>
-        <div className="h-17 w-px bg-white opacity-25"></div>
+        <div className="h-17 w-px bg-white opacity-25 max-[576px]:hidden"></div>
         <div>
-          <p className='font-bold text-5xl mb-1'>4.9</p>
+          <p className='font-bold text-5xl mb-1 max-[576px]:mt-7'>4.9</p>
           <br />
           <p className='text-2xl text-[#FFFFFF]'>Rating</p>
         </div>
@@ -140,11 +142,11 @@ const handleCheckout = () => {
 
 
 
-      <section className='flex flex-col justify-center items-center mt-30 mr-43 mb-10 ml-43'>
+      <section className='flex flex-col justify-center items-center mt-30 mr-43 mb-10 ml-43  max-[576px]:mt-20  max-[576px]:mr-18  max-[576px]:mb-10  max-[576px]:ml-18'>
         <div className='text-center mb-4'>
-          <h1 className='font-semibold text-5xl text-[#101727] '>Premium Digital Tools</h1>
+          <h1 className='font-semibold text-5xl text-[#101727] max-[576px]:text-3xl'>Premium Digital Tools</h1>
           <br />
-          <p className='text-[#627382] text-xl'>Choose from our curated collection of premium digital products designed <br />to boost your productivity and creativity.</p>
+          <p className='text-[#627382] text-xl max-[576px]:mb-4'>Choose from our curated collection of premium digital products designed <br />to boost your productivity and creativity.</p>
         </div>
         <div>
           <button onClick={() => setView("products")} className={`px-5 py-2 rounded-[1000px] mr-4 cursor-pointer 
@@ -160,11 +162,13 @@ const handleCheckout = () => {
         </div>
       </section>
 
+
       {/* Product Cards Section */}
+
       {view === "products" && (
 
-        <section className='bg-[#FFFFFF] mt-10 mr-43 mb-32 ml-43'>
-          <div className='grid grid-cols-3 gap-3'>
+        <section className='bg-[#FFFFFF] mt-10 mr-43 mb-32 ml-43 max-[576px]:mt-5 max-[576px]:mr-2 max-[576px]:mb-20 max-[576px]:ml-5'>
+          <div className='grid grid-cols-3 gap-3 max-[576px]:grid-cols-1'>
             {products.map(products => (
               <div key={products.id} className='relative border border-gray-200 rounded-2xl p-5'>
                 <div className={`absolute right-4  border border-gray-400 px-2 py-1 w-fit rounded-[1000px] 
@@ -260,13 +264,13 @@ const handleCheckout = () => {
 
       {/* Steps Section */}
 
-      <section className='pt-20 pr-50 pb-30 pl-50 bg-[#F9FAFC]'>
+      <section className='pt-20 pr-50 pb-30 pl-50 bg-[#F9FAFC] max-[576px]:pt-20 max-[576px]:pr-5 max-[576px]:pb-15 max-[576px]:pl-5'>
         <div className='text-center mb-12'>
-          <h1 className='font-bold text-5xl text-[#101727]'>Get Started in 3 Steps</h1>
+          <h1 className='font-bold text-5xl text-[#101727] max-[576px]:text-3xl'>Get Started in 3 Steps</h1>
           <br />
-          <p className='text-[#627382]'>Start using premium digital tools in minutes, not hours.</p>
+          <p className='text-[#627382] max-[576px]:text-xl'>Start using premium digital tools in minutes, not hours.</p>
         </div>
-        <div className='flex justify-around items-center gap-4'>
+        <div className='flex justify-around items-center gap-4 max-[576px]:flex-col'>
           <div className='border border-gray-300 p-6 rounded-xl flex flex-col  items-center bg-[#FFFFFF] shadow-xl relative'>
             <div className='absolute right-3 top-px mt-2 bg-[#4f39f6] text-white font-bold px-3 py-2 rounded-[1000000px]'>01</div>
             <div>
@@ -302,13 +306,13 @@ const handleCheckout = () => {
 
       {/* Pricing Section */}
 
-      <section className='mt-30 mr-50 mb-30 ml-50'>
+      <section className='mt-30 mr-50 mb-30 ml-50 max-[576px]: max-[576px]:mt-20 max-[576px]:mr-5 max-[576px]:mb-20 max-[576px]:ml-5'>
         <div className='text-center'>
-          <h1 className='text-5xl font-semibold text-[#101727]'>Simple, Transparent Pricing</h1>
+          <h1 className='text-5xl font-semibold text-[#101727] max-[576px]:text-3xl'>Simple, Transparent Pricing</h1>
           <br />
-          <p className='text-[#627382] mb-10'>Choose the plan that fits your needs. Upgrade or downgrade anytime.</p>
+          <p className='text-[#627382] mb-10 max-[576px]:text-xl'>Choose the plan that fits your needs. Upgrade or downgrade anytime.</p>
         </div>
-        <div className='flex justify-center items-center gap-6'>
+        <div className='flex justify-center items-center gap-6 max-[576px]:flex-col max-[576px]:gap-12'>
           <div className='bg-[#F9FAFC] border border-gray-100 p-6 rounded-2xl '>
             <div className='pr-20'>
               <h1 className='text-3xl font-semibold text-[#101727] mb-1.5'>Starter</h1>
@@ -324,7 +328,7 @@ const handleCheckout = () => {
             </div>
             <button className='bg-[#9514FA] text-white rounded-[100px] px-10 py-3 w-full cursor-pointer text-xl'>Get Started Free</button>
           </div>
-          <div className='bg-[#4f39f6] text-[#FFFFFF] p-6 rounded-2xl shadow-[0_20px_60px_rgba(70,50,240,0.4)] relative'>
+          <div className='bg-[#4f39f6] text-[#FFFFFF] p-6 rounded-2xl shadow-[0_20px_60px_rgba(70,50,240,0.4)] relative max-[576px]:shadow-[0_20px_60px_rgba(70,50,240,0.3)]'>
             <div><button className='bg-[#FEF3C6] text-[#BB4D00] rounded-[100px] px-2 py-1 absolute -top-3 left-1/2 -translate-x-1/2'>Most Popular</button></div>
             <div className='pr-20'>
               <h1 className='text-3xl font-semibold mb-1.5'>Pro</h1>
@@ -365,8 +369,8 @@ const handleCheckout = () => {
 
       {/* Footer Section */}
 
-      <section className='bg-[#101727] text-[#FFFFFF] pt-30 pr-50 pb-8 pl-50'>
-        <div className='flex justify-around'>
+      <section className='bg-[#101727] text-[#FFFFFF] pt-30 pr-50 pb-8 pl-50 max-[576px]:pt-20 max-[576px]:pr-5 max-[576px]:pb-8 max-[576px]:pl-5'>
+        <div className='flex justify-around max-[576px]:flex-col max-[576px]:gap-9'>
           <div>
             <h1 className='font-bold text-4xl '>DigiTools</h1>
             <br />
@@ -416,7 +420,7 @@ const handleCheckout = () => {
         <br />
         <br />
         <hr className='pt-5 opacity-10' />
-        <div className='flex justify-between items-center mt-6'>
+        <div className='flex justify-between items-center mt-6 max-[576px]:flex-col max-[576px]:gap-10'>
           <div>© 2026 Digitools. All rights reserved.</div>
           <div className='flex gap-7'>
             <div>Privacy Policy</div>
