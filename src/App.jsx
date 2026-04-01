@@ -10,6 +10,13 @@ import rocketImg from './assets/rocket.png'
 function App() {
 
   const [products, setProducts] = useState([]);
+  const [cart, setCart] = useState([]);
+  const handleCheckout = () => {
+  setCart([]);
+};
+
+  const [view, setView] = useState("products");
+  
 
   useEffect(() => {
     fetch('/Assignment-6/products.json')
@@ -17,11 +24,28 @@ function App() {
       .then(data => setProducts(data));
   }, []);
 
+  const handleAddToCart = (product) => {
+    setCart([...cart, product]);
+
+  const updatedProducts = products.filter(p => p.id !== product.id);
+      setProducts(updatedProducts);
+  };
+
+  const handleRemove = (index) => {
+   const removedItem = cart[index];
+
+  setCart(prevCart => prevCart.filter((_, i) => i !== index));
+
+  setProducts(prevProducts =>
+    [...prevProducts, removedItem].sort((a, b) => a.id - b.id)
+  );
+};
+
   return (
     <>
       {/* Navbar Section */}
 
-      <div className='flex justify-between items-center mt-4 mr-46 mb-4 ml-46 p-6'>
+      <div className='flex justify-between items-center mt-4 mr-46 mb-4 ml-46 p-6  sm:flex-row px-4 sm:px-12 py-4 gap-4'>
         <div>
           <h1 className='font-bold text-[#4f39f6] text-4xl'>DigiTools</h1>
         </div>
@@ -112,62 +136,120 @@ function App() {
           <p className='text-[#627382] text-xl'>Choose from our curated collection of premium digital products designed <br />to boost your productivity and creativity.</p>
         </div>
         <div>
-          <button className='text-[#FFFFFF] bg-[#4f39f6] rounded-[1000px] px-5 py-2 cursor-pointer mr-4'>Products</button>
-          <button>Cart(0)</button>
+          <button onClick={() => setView("products")} className={`px-5 py-2 rounded-[1000px] mr-4 cursor-pointer 
+    ${view === "products"
+              ? "bg-[#4f39f6] text-white"
+              : "bg-gray-200 text-black"} 
+  `}>Products</button>
+          <button onClick={() => setView("cart")} className={`px-5 py-2 rounded-[1000px] cursor-pointer 
+    ${view === "cart"
+              ? "bg-[#4f39f6] text-white"
+              : "bg-gray-200 text-black"}
+  `}>Cart({cart.length})</button>
         </div>
       </section>
 
-                                      {/* Product Cards Section */}
+      {/* Product Cards Section */}
+      {view === "products" && (
 
-      <section className='bg-[#FFFFFF] mt-10 mr-43 mb-32 ml-43'>
-        <div className='grid grid-cols-3 gap-3'>
-          {products.map(products => (
-            <div key={products.id} className='relative border border-gray-200 rounded-2xl p-5'>
-              <div className={`absolute right-4  border border-gray-400 px-2 py-1 w-fit rounded-[1000px] 
+        <section className='bg-[#FFFFFF] mt-10 mr-43 mb-32 ml-43'>
+          <div className='grid grid-cols-3 gap-3'>
+            {products.map(products => (
+              <div key={products.id} className='relative border border-gray-200 rounded-2xl p-5'>
+                <div className={`absolute right-4  border border-gray-400 px-2 py-1 w-fit rounded-[1000px] 
                   ${products.tag === "Best Seller" ? "bg-yellow-100 text-yellow-800" : ""}
                   ${products.tag === "Popular" ? "bg-gray-200 text-gray-700" : ""}
                   ${products.tag === "New" ? "bg-green-100 text-green-600" : ""}
                 `}>
 
-                {products.tag}
+                  {products.tag}
 
-              </div>
-              <div className='mb-4 border border-gray-50 bg-[#f5f5f5] w-fit rounded-[1000px] p-3.5'>
-                <img src={products.image} alt="" />
-              </div>
-              <div className='font-semibold text-2xl mb-4 text-[#101727] '>
-                <h1>{products.name}</h1>
-              </div>
-              <div className='mb-4 text-[#627382]'>
-                <p>{products.description}</p>
-              </div>
-              <div className='mb-4'>
-                <span className='font-bold text-2xl'>{products.price}</span>/<span>{products.type}</span>
-              </div>
-              <div className='mb-4'>
-                <ul>
-                  {products.features.map((f, i) => (
+                </div>
+                <div className='mb-4 border border-gray-50 bg-[#f5f5f5] w-fit rounded-[1000px] p-3.5'>
+                  <img src={products.image} alt="" />
+                </div>
+                <div className='font-semibold text-2xl mb-4 text-[#101727] '>
+                  <h1>{products.name}</h1>
+                </div>
+                <div className='mb-4 text-[#627382]'>
+                  <p>{products.description}</p>
+                </div>
+                <div className='mb-4'>
+                  <span className='font-bold text-2xl'>${products.price}</span>/<span>{products.type}</span>
+                </div>
+                <div className='mb-4'>
+                  <ul>
+                    {products.features.map((f, i) => (
 
-                    <li className='flex gap-2' key={i}>
-                      <img src="/Assignment-6/images/Check.png" alt="" />
-                      {typeof f === "string" ? f : f.text1 || f.text2 || f.text3}
-                    </li>
-                  ))}
-                </ul>
+                      <li className='flex gap-2' key={i}>
+                        <img src="/Assignment-6/images/Check.png" alt="" />
+                        {typeof f === "string" ? f : f.text1 || f.text2 || f.text3}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <button onClick={() => handleAddToCart(products)} className='bg-[#4f39f6] text-white rounded-[100px] px-10 py-3 w-full cursor-pointer text-xl'>Buy Now</button>
+                </div>
               </div>
-              <div>
-                <button className='bg-[#4f39f6] text-white rounded-[100px] px-10 py-3 w-full cursor-pointer text-xl'>Buy Now</button>
-              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {view === "cart" && (
+
+        <section className='mt-10 text-center bg-[#FFFFFF] pr-28 pl-28 shadow-2xl'>
+
+          {cart.length === 0 ? (
+            <div>
+              <div className='pt-40 pb-4 text-7xl'> <i class="fa-solid fa-cart-arrow-down"></i></div>
+              <p className='pb-40 text-2xl'> Your cart is empty</p>
             </div>
-          ))}
-        </div>
-        ;
-      </section>
+          ) : (
+            <div className="bg-[#FFFFFF] p-6 rounded-xl">
+              <h2 className="text-3xl font-semibold mb-8 text-start">Your Cart</h2>
 
+              {cart.map((item, index) => (
+                <div key={index} className="flex justify-between items-center mb-4 p-4 bg-[#F9FAFC] rounded-2xl">
+                  <div className="flex items-center gap-3">
+                    <img src={item.image} className=" border border-gray-200 w-fit rounded-[500px] p-4" />
+                    <div>
+                      <p className="font-semibold text-xl text-[#101727]">{item.name}</p>
+                      <p className='text-start mt-1'>${item.price}</p>
+                    </div>
+                  </div>
 
-                                {/* Steps Section */}
+                  <button
+                    onClick={() => handleRemove(index)}
+                    className="text-red-500 font-semibold text-xl cursor-pointer hover:text-amber-900"
+                  >
+                    Remove
+                  </button>
+                </div>
+              ))}
 
-      <section className='mt-30 mr-50 mb-30 ml-50'>
+              <div className="flex justify-between text-2xl mt-4 font-semibold pr-4 pl-4">
+                <span>Total:</span>
+                <span>
+                  
+                  ${cart.reduce((total, item) => total + Number(item.price), 0)}
+                </span>
+              </div>
+
+              <button onClick={handleCheckout} className="mt-4 w-full bg-purple-600 text-white text-xl py-3 rounded-full cursor-pointer hover:text-violet-100 hover:animate-[float_0.6s_ease-in-out_infinite] transition">
+                Proceed To Checkout
+              </button>
+            </div>
+          )}
+
+        </section>
+
+      )}
+
+      {/* Steps Section */}
+
+      <section className='pt-20 pr-50 pb-30 pl-50 bg-[#F9FAFC]'>
         <div className='text-center mb-12'>
           <h1 className='font-bold text-5xl text-[#101727]'>Get Started in 3 Steps</h1>
           <br />
@@ -270,22 +352,22 @@ function App() {
       </section>
 
 
-                                  {/* Footer Section */}
+      {/* Footer Section */}
 
       <section className='bg-[#101727] text-[#FFFFFF] pt-30 pr-50 pb-8 pl-50'>
         <div className='flex justify-around'>
           <div>
             <h1 className='font-bold text-4xl '>DigiTools</h1>
             <br />
-            <p className='text-[#627382]'>Premium digital tools for creators,<br />professionals, and businesses. Work smarter<br />with our suite of powerful tools.</p>
+            <p className='text-gray-400'>Premium digital tools for creators,<br />professionals, and businesses. Work smarter<br />with our suite of powerful tools.</p>
           </div>
           <div>
             <ul>
               <li className='text-2xl mb-2.5'>Product</li>
-              <li className='text-[#627382] mb-3'>Features</li>
-              <li className='text-[#627382] mb-3'>Pricing</li>
-              <li className='text-[#627382] mb-3'>Templates</li>
-              <li className='text-[#627382]'>Integrations</li>
+              <li className='text-gray-400 mb-3'>Features</li>
+              <li className='text-gray-400 mb-3'>Pricing</li>
+              <li className='text-gray-400 mb-3'>Templates</li>
+              <li className='text-gray-400'>Integrations</li>
             </ul>
           </div>
           <div>
@@ -324,12 +406,12 @@ function App() {
         <br />
         <hr className='pt-5 opacity-10' />
         <div className='flex justify-between items-center mt-6'>
-            <div>© 2026 Digitools. All rights reserved.</div>
-            <div className='flex gap-7'>
-               <div>Privacy Policy</div>
-               <div>Terms of Service</div>
-               <div>Cookies</div>
-            </div>
+          <div>© 2026 Digitools. All rights reserved.</div>
+          <div className='flex gap-7'>
+            <div>Privacy Policy</div>
+            <div>Terms of Service</div>
+            <div>Cookies</div>
+          </div>
         </div>
       </section>
     </>
